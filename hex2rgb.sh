@@ -17,6 +17,7 @@ else
     rgb_b=`echo $((0x${hex_b}))`
 
     rgb="rgb($rgb_r, $rgb_g, $rgb_b)"
+    colored=`printf '\033[38;2;%d;%d;%dm%s' $rgb_r $rgb_g $rgb_b "$rgb"`
     printf "$rgb" | pbcopy
-    echo "Converted #$hex to $rgb"
+    printf "Converted #$hex to $colored"
 fi
