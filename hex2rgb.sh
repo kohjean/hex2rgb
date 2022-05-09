@@ -8,6 +8,9 @@ else
     if [ ${hex:0:1} = "#" ]; then
         hex=${hex:1:6}
     fi
+    if [ ${#hex}=3 ]; then
+        hex=${hex:0:1}${hex:0:1}${hex:1:1}${hex:1:1}${hex:2:1}${hex:2:1}
+    fi
     hex_r="${hex:0:2}"
     hex_g="${hex:2:2}"
     hex_b="${hex:4:2}"
